@@ -1,0 +1,49 @@
+name: Sync with Hugging Face Hub
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+   sync_model_hello_world_handler:
+    uses: nateraw/huggingface-sync-action/.github/workflows/sync_with_hf_hub.yml@main
+    with:
+      github_repo_id: nateraw/my-huggingface-repos
+      huggingface_repo_id: nateraw/hello-world-handler
+      repo_type: model
+      subdirectory: models/hello-world-handler
+    secrets:
+      hf_token: ${{ secrets.HF_TOKEN }}
+
+   sync_model_real_esrgan:
+    uses: nateraw/huggingface-sync-action/.github/workflows/sync_with_hf_hub.yml@main
+    with:
+      github_repo_id: nateraw/my-huggingface-repos
+      huggingface_repo_id: nateraw/real-esrgan
+      repo_type: model
+      subdirectory: models/real-esrgan
+    secrets:
+      hf_token: ${{ secrets.HF_TOKEN }}
+
+   sync_space_hello_world_gradio:
+    uses: nateraw/huggingface-sync-action/.github/workflows/sync_with_hf_hub.yml@main
+    with:
+      github_repo_id: nateraw/my-huggingface-repos
+      huggingface_repo_id: nateraw/hello-world-gradio
+      repo_type: space
+      space_sdk: gradio
+      subdirectory: spaces/hello-world-gradio
+    secrets:
+      hf_token: ${{ secrets.HF_TOKEN }}
+
+   sync_space_hello_world_streamlit:
+    uses: nateraw/huggingface-sync-action/.github/workflows/sync_with_hf_hub.yml@main
+    with:
+      github_repo_id: nateraw/my-huggingface-repos
+      huggingface_repo_id: nateraw/hello-world-streamlit
+      repo_type: space
+      space_sdk: streamlit
+      subdirectory: spaces/hello-world-streamlit
+    secrets:
+      hf_token: ${{ secrets.HF_TOKEN }}

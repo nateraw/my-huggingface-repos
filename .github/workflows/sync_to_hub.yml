@@ -1,4 +1,4 @@
-name: Sync with Hugging Face Hub
+name: Sync With Hugging Face Hub
 
 on:
   push:

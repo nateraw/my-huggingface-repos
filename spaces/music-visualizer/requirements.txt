@@ -2,3 +2,4 @@ matplotlib
 torch
 torchvision
 librosa
+av==9.2.0

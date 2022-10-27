@@ -56,7 +56,18 @@ jobs:
       github_repo_id: nateraw/my-huggingface-repos
       huggingface_repo_id: nateraw/stable-diffusion-music-videos
       repo_type: space
-      space_sdk: streamlit
+      space_sdk: gradio
       subdirectory: spaces/stable-diffusion-music-videos
+    secrets:
+      hf_token: ${{ secrets.HF_TOKEN }}
+
+   sync_space_music_visualizer:
+    uses: nateraw/huggingface-sync-action/.github/workflows/sync_with_hf_hub.yml@main
+    with:
+      github_repo_id: nateraw/my-huggingface-repos
+      huggingface_repo_id: nateraw/music-visualizer
+      repo_type: space
+      space_sdk: gradio
+      subdirectory: spaces/music-visualizer
     secrets:
       hf_token: ${{ secrets.HF_TOKEN }}
